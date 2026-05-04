@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn:first-child{
+    width: 2vw;
+}
+.btn{
+    margin-left: 1vw;
+    margin-top: 1vh;
+    height: 4vh;
+    width: 5vw;
+}
+
+.contenedor{
+    height: 100vh;
+    background-color: red;
+}
+
+
+.contenedor__titulo{
+    background-color: blue;
+    height: 5vh;
+}
+
