@@ -4,17 +4,22 @@
     box-sizing: border-box;
 }
 
-.btn:first-child{
-    width: 2vw;
-}
 .btn{
+    width: 2vw;
+    height: 4vh;
+}
+.btts .btn{
     margin-left: 1vw;
     margin-top: 1vh;
     height: 4vh;
-    width: 5vw;
+    width: 6vw;
 }
 
 .contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding-left: 5vw;
     height: 100vh;
     background-color: red;
 }
@@ -25,3 +30,40 @@
     height: 5vh;
 }
 
+.contenedor__contexto{
+    background-color: peru;
+    height: 3vh;
+}
+
+.contenedor__tarjetas{
+    display: flex;
+    height: 70vh;
+    width: 70vw;
+    background-color: crimson;
+    border-radius: 25px;  
+}
+
+.contenedor__tarjeta{
+    display: flex;
+    height: 25vh;
+    width: 70vw;
+    border-radius: 25px;  
+    background-color: aqua;
+}
+.contenedor__imagen{
+    background-image: url(imagenesProductos/download.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 20%;
+}
+
+.contenedor__informacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    padding-left: 5%;
+    background-color: violet;
+    width: 75%;
+}
