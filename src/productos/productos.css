@@ -53,7 +53,8 @@
 .contenedor__imagen{
     background-image: url(imagenesProductos/download.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover
+    ;
     height: 100%;
     width: 20%;
 }
