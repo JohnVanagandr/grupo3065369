@@ -102,7 +102,38 @@
 
     --color-blue-700: #2874A6;
     --color-blue-800: #1F618D;
+    --color-blue-900: #154360;
+    --color-azul: #1A5276;
+    --color-azul-celeste: #5DADE2;
+    --color-azul-claro: #AED6F1;
 
+/* =========================
+        Negro
+========================= */
+
+    --color-black: #000000;
+    --color-black-100: #0D0D0D;
+    --color-black-200: #1A1A1A;
+    --color-black-300: #262626;
+    --color-black-400: #333333;
+    --color-black-500: #404040;
+    --color-black-600: #4D4D4D;
+    --color-black-700: #595959;
+
+/* =========================
+        Morado
+========================= */
+
+    --color-purple-50: #F5E6FF;
+    --color-lavanda: #9ba5fd;
+    --color-purple-100: #E0B3FF;
+    --color-purple-200: #C980FF;
+    --color-purple-300: #B04DFF;
+    --color-purple-400: #9B1AFF;
+    --color-purple-500: #8000FF;
+    --color-purple-600: #6600CC;
+    --color-purple-700: #4D0099;
+    --color-purple-800: #330066;
 
 /* =========================
         ESPACIADO (SYSTEM)
