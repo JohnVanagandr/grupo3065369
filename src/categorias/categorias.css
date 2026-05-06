@@ -122,8 +122,21 @@ body::before {
   flex: 1;
 }
 
+.categoria-card__bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Action buttons */
 .categoria-card__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.categoria-card__bottom__actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -199,4 +212,9 @@ body::before {
 .btn-crear:hover {
   background-color: #6e7390;
   transform: translateY(-2px);
+}
+
+.categoria-card__counter{
+  display: flex;
+  align-items: end;
 }
