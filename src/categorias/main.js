@@ -1,4 +1,8 @@
 // Importación de funciones desde módulos
+import { crearTarea } from "../helpers/posts.js";
+//importamos la funcion de eliminar categorias
+import { eliminarCategoria} from "../helpers/delete.js"
+import { log } from "console";
 import { crearTarea } from "./tareas/crear.js";
 import { cargarCategorias } from "./tareas/listar.js";
 
