@@ -1,3 +1,5 @@
+@import "../styles/main/main.css";
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +11,8 @@
     height: 4vh;
     border-radius: 10px;
     border: none;
-    background-color: red;
+    color: var(--color-white);
+    background-color: var(--color-lavanda);
 }
 .btn:hover{
     transform: scale3d(0.99, 0.99, 0.99);
@@ -33,6 +36,7 @@
 
 .contenedor__titulo{
     align-self: self-start;
+    color: var(--color-lavanda);
     width: 70vw;
     height: 5vh;
 }
@@ -55,14 +59,16 @@
     width: 10vw;
     align-self: flex-end;
     justify-self: flex-end;
+    color: var(--color-black);
 }
 
 .contenedor__tarjeta{
     display: flex;
+    background-color: var(--color-white);
     height: 25vh;
     width: 100%;
     border-radius: 25px;  
-    border:2px solid goldenrod;
+    border:2px solid var(--color-white);
 }
 .contenedor__imagen{
     background-image: url(imagenesProductos/download.jpg);
@@ -91,7 +97,7 @@
 }
 .form{
     display: flex;
-    background-color: rgba(255, 0, 0, 0.911);
+    background-color: var(--color-white);
     position: absolute;
     flex-direction: column;
     justify-content: space-between;
@@ -101,9 +107,9 @@
     padding: 2% 7%;
 }
 .form__oculto{
-    /* lucia quitalo cuando apliques las custom del formulario y ponlo cuando termines */
     display: none;
 }
+
 .form__campos{
     display: flex;
     flex-direction: column;
@@ -111,6 +117,7 @@
 
 .form__input{
     height: 5vh;
+    background-color: var(--color-azul-claro);
     border: none;
     border-radius: 8px;
     padding-left: 10px;
@@ -138,6 +145,7 @@
     height: 100%;
     width: 100%;
     font-size: 1.5rem;
+    border:none;
 }
 a{
     text-decoration: none;
@@ -145,5 +153,5 @@ a{
 .contenedor__header{
     display: flex;
     justify-content: space-between;
-    /* background-color: blue; */
+    background-color: var(--color-white);
 }
