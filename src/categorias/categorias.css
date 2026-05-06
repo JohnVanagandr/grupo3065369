@@ -128,6 +128,14 @@ body::before {
 }
 
 /* Action buttons */
+.categoria-card__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 4px;
+}
+
 .categoria-card__bottom__actions {
   display: flex;
   gap: 14px;
@@ -163,6 +171,17 @@ body::before {
 }
 
 .categoria-card__btn--eliminar:hover {
+  background-color: #b0b4cc;
+  transform: translateY(-1px);
+}
+
+.categoria-card__btn--ver {
+  background-color: #c5c8db;
+  color: #2c3250;
+  margin-left: auto;
+}
+
+.categoria-card__btn--ver:hover {
   background-color: #b0b4cc;
   transform: translateY(-1px);
 }
