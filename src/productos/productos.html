@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="productos.css">
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navegacion">
-        <input type="checkbox" id="regresar-check" class="navegacion__checkbox">
-        <label for="regresar-check" class="navegacion__boton" title="Volver a categorías">
-            <span class="navegacion__icono">&larr;</span> 
-        </label>
+        <a href="" class="navegacion__volver"><button class="btt__navegacion--volver">
+            <i class="bx bx-arrow-left-stroke"></i>
+        </button></a>
     </nav>
 
     <main class="contenedor">
@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <button class="contenedor__button--crear">Crear producto</button>
+            <button class="contenedor__button--crear btn">Crear producto</button>
     
         </section>
         <div class="modal-overlay form__oculto">
