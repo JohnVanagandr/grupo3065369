@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", async function(e){
 const contenedor = document.querySelector('.cards-lista');
 //click para activar la eliminacion
 contenedor.addEventListener('click', (e) => {
-    //verificamos con la condicional if, que se el boton de eliminar, 
-    console.log('click detectado en el contendor');
     //creamos el evento (e), si tiene en su lista de clases (.classlist) la clase de eliminar (.categoria-card__btn--eliminar), entonces se activa el proceso de eliminacion
     if (e.target.classList.contains('categoria-card__btn--eliminar')){
         //buscamos la tarjeta y el ID y lo almacenamos en dos constantes por separadas, que recieben de nombre tarjeta y idTexto

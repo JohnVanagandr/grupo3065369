@@ -6,10 +6,10 @@ export const crearCategoriaCard = (categoria) => {
     const card = document.createElement('div');
     card.classList.add('categoria-card');
 
-    // const img = document.createElement('img');
-    // img.classList.add('categoria-card__img');
-    // img.src = `$categoria`;
-    // img.alt = `Imagen de ${categoria.nombre}`;
+    const img = document.createElement('img');
+    img.classList.add('categoria-card__img');
+    img.src = `$categoria`;
+    img.alt = `Imagen de ${categoria.nombre}`;
 
     const body = document.createElement('div');
     body.classList.add('categoria-card__body');
