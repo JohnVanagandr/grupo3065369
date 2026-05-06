@@ -12,6 +12,9 @@ const labelNombre = document.getElementById("labelNombre");
 const btnAbrirCrear = document.querySelector(".contenedor__button--crear");
 const btnCerrarForm = document.getElementById("closeForm");
 const btnGuardarForm = document.querySelector(".btn--guardar");
+const errorNombre = document.getElementById("errorNombre");
+const errorDesc = document.getElementById("errorDesc");
+const errorUrl = document.getElementById("errorUrl");
 
 // Campos del formulario
 const inputNombre = document.getElementById("nombre");
@@ -185,6 +188,15 @@ contenedorTarjetas.addEventListener("click", async (e) => {
 // Procesamiento unificado del formulario (Guardar o Editar)
 formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const esNombreValido = isValidInput(inputNombre, "El nombre es obligatorio", errorNombre);
+    const esDescValida = isValidInput(inputDesc, "La descripción no puede estar vacía", errorDesc);
+    const esUrlValida = isValidInput(inputUrl, "Debes poner un enlace de imagen", errorUrl);
+
+    // Si alguna falla, detenemos la ejecución
+    if (!esNombreValido || !esDescValida || !esUrlValida) {
+        return; 
+    }
 
     const datosCampos = {
         nombre: inputNombre.value.trim(),

@@ -37,16 +37,19 @@
                 <div class="form__campos">
                     <label for="nombre" class="form__label" id="labelNombre">Nombre del producto:</label>
                     <input type="text" id="nombre" class="form__input" placeholder="Ej. Monitor Gamer">
+                    <span id="errorNombre" class="error-msg"></span>
                 </div>
 
                 <div class="form__campos">
                     <label for="desc" class="form__label">Descripción:</label>
                     <textarea id="desc" class="form__input" rows="3"></textarea>
+                    <span id="errorDesc" class="error-msg"></span>
                 </div>
 
                 <div class="form__campos">
                     <label for="url" class="form__label">Enlace de la imagen:</label>
                     <input type="text" id="url" class="form__input" placeholder="http://...">
+                    <span id="errorUrl" class="error-msg"></span>
                 </div>
 
                 <button type="submit" class="btn btn--guardar">Guardar cambios</button>
