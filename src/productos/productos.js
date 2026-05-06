@@ -22,6 +22,27 @@ const inputUrl = document.getElementById("url");
 const parametrosURL = new URLSearchParams(window.location.search);
 const CATEGORIA_ACTUAL_ID = parametrosURL.get("categoriaId") || "1"; 
 
+// Validaciones 
+
+function showError(errorElement, message) {
+    errorElement.textContent = message;
+}
+
+function clearError(errorElement, inputElement) {
+    errorElement.textContent = '';
+    inputElement.classList.remove('error');
+}
+
+function isValidInput(input, message, errorElement) {
+    if (!input.value.trim()) {
+        showError(errorElement, message);
+        input.classList.add('error');
+        return false
+    }
+    clearError(errorElement, input);
+    return true;
+}
+
 // Renderizado dinámico de la página
 async function cargarYRenderizarPagina() {
     try {
