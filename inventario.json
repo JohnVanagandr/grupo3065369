@@ -18,17 +18,17 @@
   ],
   "productos": [
     {
-      "categoriaId": 1,
+      "categoriaId": "1",
       "nombre": "Sillas",
-      "descripcion": "Sillas ergonómicas para oficina con soporte lumbar.",
-      "imagen": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=500",
+      "descripcion": "Sillas ergonómicas para oficina con soporte lumbar. ñeñeñeñe",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu18rqX3MQb5mgdw1eNmByRyQ0V-fnQbcEsQ&s",
       "id": "1"
     },
     {
       "categoriaId": 1,
       "nombre": "Lockers",
       "descripcion": "Casilleros metálicos de alta resistencia.",
-      "imagen": "https://images.unsplash.com/photo-1589131011504-63be039783f6?q=80&w=500",
+      "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQbEHLp4cnLYrOyYIicZZiIbHKLUbaEtGQZyiHM4ROGjIm6oR1igE0z8U-yV3ULnEDdMMaFiM9YKfTSMIQOcaDcmX2WxWmIsXRSSqUTfebMX8cumiPojdeh",
       "id": "2"
     },
     {
@@ -46,11 +46,11 @@
       "imagen": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=500"
     },
     {
-      "id": "5",
       "categoriaId": 1,
       "nombre": "Luces",
       "descripcion": "Lámparas de escritorio LED con ajuste de intensidad.",
-      "imagen": "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=500"
+      "imagen": "https://previews.123rf.com/images/bizhamox/bizhamox2407/bizhamox240700038/231140415-long-fluorescent-tube-led-bulbs-and-strips-installed-on-the-ceiling-of-a-modern-cafe.jpg",
+      "id": "5"
     },
     {
       "id": "6",
