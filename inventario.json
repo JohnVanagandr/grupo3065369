@@ -53,11 +53,11 @@
       "id": "5"
     },
     {
-      "id": "6",
-      "categoriaId": 2,
+      "categoriaId": "2",
       "nombre": "Computador",
       "descripcion": "Equipos de torre de alto rendimiento.",
-      "imagen": "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=500"
+      "imagen": "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=500",
+      "id": "6"
     },
     {
       "id": "7",
