@@ -162,6 +162,17 @@ body::before {
   transform: translateY(-1px);
 }
 
+.categoria-card__btn--ver {
+  background-color: #c5c8db;
+  color: #2c3250;
+  margin-left: auto;
+}
+
+.categoria-card__btn--ver:hover {
+  background-color: #b0b4cc;
+  transform: translateY(-1px);
+}
+
 /* Footer */
 .page-footer {
   display: flex;
