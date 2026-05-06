@@ -137,7 +137,7 @@ contenedorTarjetas.addEventListener("click", async (e) => {
         try {
             //Se hace una petición al servidor json-server 
             // para traer la información actual del producto que se quiere editar.
-            const producto = await get('productos/${idProducto}');
+            const producto = await get(`productos/${idProducto}`);
 
             //Los campos del formulario se llenan con la información actual del producto.
             inputNombre.value = producto.nombre;
