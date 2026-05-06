@@ -3,6 +3,11 @@ import { crearTarea } from "../helpers/posts.js";
 //importamos la funcion de eliminar categorias
 import { eliminarCategoria} from "../helpers/delete.js"
 import { log } from "console";
+import { crearTarea } from "./tareas/crear.js";
+import { cargarCategorias } from "./tareas/listar.js";
+
+// Carga inicial de categorías al cargar la página
+cargarCategorias();
 
 // Configuración de eventos al cargar el DOM
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     botonCrear.addEventListener("click", crearTarea);
 });
 
+//importamos la funcion de eliminar categorias
+import { eliminarCategoria} from "../helpers/delete.js"
+// import { log } from "console";
 //seleccionamos el contenedor de las caeggorias y se guarda en uns cosnt llamada contendero
 const contenedor = document.querySelector('.cards-lista');
 //click para activar la eliminacion
