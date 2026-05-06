@@ -1,29 +1,22 @@
 // Importación de funciones desde módulos
-import { crearTarea } from "../helpers/posts.js";
 //importamos la funcion de eliminar categorias
-import { eliminarCategoria} from "../helpers/delete.js"
-import { log } from "console";
-import { crearTarea } from "./tareas/crear.js";
-import { cargarCategorias } from "./tareas/listar.js";
+import { eliminarCategoria } from '../helpers/delete.js';
+import { cargarCategorias } from './tareas/actualizarInventario.js';
+
 
 // Carga inicial de categorías al cargar la página
 cargarCategorias();
 
-// Configuración de eventos al cargar el DOM
-document.addEventListener("DOMContentLoaded", () => {
-    const botonCrear = document.getElementById("btn-crear");
-    botonCrear.addEventListener("click", crearTarea);
-});
+// // Configuración de eventos al cargar el DOM
+// document.addEventListener("DOMContentLoaded", () => {
+//     const botonCrear = document.getElementById("btn-crear");
+//     botonCrear.addEventListener("click",crearTarea);
+// });
 
-//importamos la funcion de eliminar categorias
-import { eliminarCategoria} from "../helpers/delete.js"
-// import { log } from "console";
 //seleccionamos el contenedor de las caeggorias y se guarda en uns cosnt llamada contendero
 const contenedor = document.querySelector('.cards-lista');
 //click para activar la eliminacion
 contenedor.addEventListener('click', (e) => {
-    //verificamos con la condicional if, que se el boton de eliminar, 
-    console.log('click detectado en el contendor');
     //creamos el evento (e), si tiene en su lista de clases (.classlist) la clase de eliminar (.categoria-card__btn--eliminar), entonces se activa el proceso de eliminacion
     if (e.target.classList.contains('categoria-card__btn--eliminar')){
         //buscamos la tarjeta y el ID y lo almacenamos en dos constantes por separadas, que recieben de nombre tarjeta y idTexto

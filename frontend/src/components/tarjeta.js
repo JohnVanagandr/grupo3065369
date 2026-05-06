@@ -6,7 +6,7 @@ export const crearCategoriaCard = (categoria) => {
 
     const img = document.createElement('img');
     img.classList.add('categoria-card__img');
-    img.src = `https://via.placeholder.com/290x180/e8e9ee/2c3250?text=${nombreSlug}`;
+    // img.src = `https://via.placeholder.com/290x180/e8e9ee/2c3250?text=${nombreSlug}`;
     img.alt = `Imagen de ${categoria.nombre}`;
 
     const body = document.createElement('div');
