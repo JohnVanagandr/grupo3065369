@@ -1,4 +1,4 @@
-import { get } from '../api.js';
+import { get } from '../helpers/get.js';
 import { crearCategoriaCard } from './categoriaCard.js';
 
 const cardContainer = document.querySelector('#card-container');
