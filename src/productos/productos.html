@@ -8,99 +8,79 @@
 </head>
 <body>
 
-    <!-- Boton Retornar a categorias -->
-    <button class="btn"></button>
+    <nav class="navegacion">
+        <input type="checkbox" id="regresar-check" class="navegacion__checkbox">
+        <label for="regresar-check" class="navegacion__boton" title="Volver a categorías">
+            <span class="navegacion__icono">&larr;</span> 
+        </label>
+    </nav>
 
-    <!-- contenedor princiaapl del contenido -->
     <main class="contenedor">
 
-        <!-- Titulo del apartado -->
         <h1 class="contenedor__titulo">PRODUCTOS-INMOBILIARIO</h1>
 
-        <!-- Descripcion general -->
         <p class="contenedor__contexto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis officia doloribus recusandae commodi consectetur totam quis modi obcaecati beatae unde iusto non perferendis, odit esse velit est, ipsam itaque blanditiis?</p>
 
-        <!-- Contenedor principal de las tarjetas -->
         <section class="contenedor__tarjetas">
 
-            <!-- contenedor de cada tarjeta -->
             <div class="contenedor__tarjeta">
 
-                <!-- contendor de las imagenes -->
                 <div class="contenedor__imagen">
                     
                 </div>
 
-                <!-- contenedor de la informacion de productos -->
                 <div class="contenedor__informacion">
-                    <h3 class="contenedor__producto">
-                        Lockers
-                    </h3>
+                    <div class="contenedor__header">
+                        <h3 class="contenedor__producto">
+                            Lockers
+                        </h3>
+                        <span class="contenedor__id">#15</span>
+                    </div>
                     
                     <p class="contenedor__descripcion">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam!
                     </p>
-                    <div class="btts">
-                        <!-- boton editar productos -->
-                        <button class="btn">Editar Producto</button>
+                    <div class="contenedor__acciones">
+                        <button class="btn btn--editar">Editar Producto</button>
                     
-                        <!-- boton eliminar producto -->
-                        <button class="btn">Eliminar Producto</button>
+                        <button class="btn btn--eliminar">Eliminar Producto</button>
                     </div>
                 </div>
             </div>
-            
 
-            
-            <!-- visualizacion de stock -->
-            <p class="contenedor__stock"></p>
-
-            <!-- Contenedor principal del formulario -->
-            <form action="" class="form form__oculto">
-
-                <!-- boton de cerrar el producto -->
-                <button class="btn"></button>
-
-                <!-- Contenedor de los campos inputs -->
-                <div class="form__campos">
-                    <!-- label o informacion de input -->
-                    <label for="" class="form__indicacion" id="info">Ingrese el nombre del producto: </label>
-
-                    <!-- Input del nombre del productos -->
-                    <input type="text" name="" id="" class="form__input">
+            <button class="contenedor__button--crear">Crear producto</button>
+    
+        </section>
+        <div class="modal-overlay form__oculto">
+            <form action="" class="form">
+                <div class="form__header">
+                    <h2 class="form__titulo">
+                        INFORMACION DEL PRODUCTO
+                    </h2>
+                    <button type="button" class="form__close" id="closeForm">X</button>
                 </div>
 
-                <!-- Contenedor inputs -->
                 <div class="form__campos">
-                    <!-- labe del input del serial -->
-                    <label for="" class="form__indicacion">Ingrese el serial del equipo</label>
-                    <!-- Input para añadir el serial -->
-                    <input type="text" name="" class="form__input" id="">
+                    <label for="nombre" class="form__label">Ingrese el nombre del producto: </label>
+                    <input type="text" id="nombre" class="form__input" placeholder="Nombre del producto">
                 </div>
 
-                <!-- Contenedor input -->
                 <div class="form__campos">
-                    <!-- Label de la descripcion -->
-                    <label for="" class="form__indicacion">Ingrese la Descripcion: </label>
-                    <!-- Input de la descripcion del producto -->
-                    <input type="text" name="" id="" class="form__input">
+                    <label for="desc" class="form__label">Ingrese la Descripcion: </label>
+                    <textarea id="desc" class="form__input" rows="3"></textarea>
                 </div>
 
-                <!-- Contenedor input -->
                 <div class="form__campos">
-                    <!-- label de la url -->
-                    <label for="" class="form__indicacion">Ingrese la url de la imagen </label>
+                    <label for="url" class="form__label">Ingrese la url de la imagen </label>
 
-                    <!-- input de la url -->
-                    <input type="text" name="" id="" class="form__input">
+                    <input type="text" id="url" class="form__input" placeholder="http://...">
                 </div>
 
-                <!-- boton de creacion del producto -->
-                <button class="btn">Crear producto</button>
+                <button type="submit" class="btn btn--guardar">Guardar cambios</button>
 
 
             </form>
-        </section>
+        </div>
     </main>
 </body>
 </html>
