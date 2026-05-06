@@ -89,3 +89,41 @@ btnCerrarForm.addEventListener("click", () => {
 });
 
 // codigo seguno integrante (santiago)
+
+// Función interna para despachar un nuevo producto al db.json
+async function ejecutarCreacionProducto(datos) {
+    try {
+        const nuevoObjeto = {
+            categoriaId: CATEGORIA_ACTUAL_ID,
+            nombre: datos.nombre,
+            descripcion: datos.descripcion,
+            imagen: datos.imagen
+    };
+
+    await Post("productos", nuevoObjeto);
+    modalOverlay.classList.add("form__oculto");
+    formulario.reset();
+    
+    // Recarga la interfaz sin refrescar el navegador (Petición de visual)
+    await cargarYRenderizarPagina(); 
+    } catch (error) {
+    console.error("Error al crear el producto:", error);
+    }
+}
+
+// Delegación de eventos para capturar clics en "Eliminar"
+contenedorTarjetas.addEventListener("click", async (e) => {
+    if (e.target.classList.contains("btn--eliminar")) {
+        const idProducto = e.target.dataset.id;
+        const confirmacion = confirm("¿Estás seguro de que deseas eliminar este producto?");
+    
+    if (confirmacion) {
+        try {
+        await remove(`productos/${idProducto}`);
+        await cargarYRenderizarPagina(); // Re-renderizado limpio
+        } catch (error) {
+        console.error("Error al remover el recurso del servidor:", error);
+        }
+    }
+    }
+});
