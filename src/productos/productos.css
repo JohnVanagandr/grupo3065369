@@ -1,15 +1,20 @@
+@import "../styles/main/main.css";
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
 .btn{
-    width: 10vw;
-    height: 4vh;
+    padding: 10px;
     border-radius: 10px;
     border: none;
-    background-color: red;
+    color: var(--color-white);
+    background-color: var(--color-lavanda);
+    font-size: 0.7rem;
 }
 .btn:hover{
     transform: scale3d(0.99, 0.99, 0.99);
@@ -18,14 +23,14 @@
     margin-left: 1vw;
     margin-top: 1vh;
     height: 5vh;
-    width: 9vw;
+    padding: 10px;
 }
 
 .contenedor{
     display: flex;
     flex-direction: column;
-    gap: 5vh;
-    height: 100vh;
+    gap: 30px;
+    height: 90vh;
     width: 80vw;
     justify-self: center;
 }
@@ -33,57 +38,63 @@
 
 .contenedor__titulo{
     align-self: self-start;
+    color: var(--color-lavanda);
     width: 70vw;
-    height: 5vh;
 }
 
 .contenedor__contexto{
     width: 70vw;
-    height: 6vh;
 }
 
 .contenedor__tarjetas{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 40vh;
+    gap: 15px;
+    height: auto;
     width: 100%;
     border-radius: 25px;  
 }
+
+.contenedor__acciones{
+    display: flex;
+    gap: 20px;
+}
 .contenedor__button--crear{
-    height: 5vh;
-    width: 10vw;
+    margin: 10px;
     align-self: flex-end;
     justify-self: flex-end;
+    color: var(--color-black);
 }
 
 .contenedor__tarjeta{
     display: flex;
-    height: 25vh;
+    background-color: var(--color-white);
     width: 100%;
     border-radius: 25px;  
-    border:2px solid goldenrod;
+    border:2px solid var(--color-white);
 }
 .contenedor__imagen{
     background-image: url(imagenesProductos/download.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 23px;
+    border-radius: 23px 0 0 23px;
     height: 100%;
-    width: 20%;
+    width: 30%;
 }
 
 .contenedor__informacion{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5%;
-    padding-left: 5%;
+    gap: 10px;
+    padding: 20px;
     width: 75%;
 }
 
 .form .btn{
-    width: 10vw;
+    align-self: center;
+    margin-top: 2vh;
 }
 .form .btn:first-child{
     width: 2vw;
@@ -91,32 +102,67 @@
 }
 .form{
     display: flex;
-    background-color: rgba(255, 0, 0, 0.911);
-    position: absolute;
+    background-color: var(--color-white);
     flex-direction: column;
     justify-content: space-between;
-    height: 70vh;
-    width: 40vw;
-    margin:0 25vw ;
-    padding: 2% 7%;
+    margin:0;
+    padding: 20px 35px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.274);
 }
 .form__oculto{
-    /* lucia quitalo cuando apliques las custom del formulario y ponlo cuando termines */
     display: none;
+}
+
+.form__titulo{
+    text-align: center;
+    font-size: 1.3rem;
 }
 .form__campos{
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .form__input{
     height: 5vh;
+    background-color: var(--color-gray-100);
     border: none;
     border-radius: 8px;
     padding-left: 10px;
 }
 .form__input:focus{
     outline: none;
+}
+
+textarea.form__input{
+    height: 15vh;
+    resize: none;
+}
+
+.form__header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;           
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form__close {
+    background: none;
+    border: none;
+    font-size: 1rem; 
+    padding: 0;
+    width: auto;
+    position: absolute;
+    right: -20px;
+    top: -10px;
 }
 
 .navegacion{
@@ -138,6 +184,7 @@
     height: 100%;
     width: 100%;
     font-size: 1.5rem;
+    border:none;
 }
 a{
     text-decoration: none;
@@ -145,5 +192,5 @@ a{
 .contenedor__header{
     display: flex;
     justify-content: space-between;
-    /* background-color: blue; */
+    background-color: var(--color-white);
 }

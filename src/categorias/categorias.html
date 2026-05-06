@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categoría - Inmobiliario</title>
+  <title>Categorías de Inventario</title>
   <link href="categorias.css" rel="stylesheet">
 </head>
 <body>
@@ -11,45 +11,64 @@
   <h1 class="page-titulo">Categorías</h1>
 
   <p class="page-desc">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-    and scrambled it to make a type specimen book.
+    Gestiona las categorías principales de tus productos del inventario y revisa existencias.
   </p>
 
   <div class="cards-lista">
-
+    
     <div class="categoria-card">
-      <img class="categoria-card__img" src="" alt="Lockers de aprendices">
+      <img class="categoria-card__img" src="https://via.placeholder.com/290x180/e8e9ee/2c3250?text=Inmobiliario" alt="Imagen de Inmobiliario">
       <div class="categoria-card__body">
         <div class="categoria-card__header">
-          <p class="categoria-card__titulo">Lockers de aprendices</p>
-          <p class="categoria-card__id">#15</p>
+          <p class="categoria-card__titulo">Inmobiliario</p>
+          <p class="categoria-card__id"></p>
         </div>
         <p class="categoria-card__desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500
+          Mobiliario de oficina y accesorios de iluminación.
         </p>
+        <p class="categoria-card__count">Cantidad de productos: <span class="count-value">0</span></p>
         <div class="categoria-card__actions">
-          <button class="categoria-card__btn categoria-card__btn--editar">Editar producto</button>
-          <button class="categoria-card__btn categoria-card__btn--eliminar">Eliminar producto</button>
+          <button type="button" class="categoria-card__btn categoria-card__btn--editar">Editar</button>
+          <button type="button" class="categoria-card__btn categoria-card__btn--eliminar">Eliminar</button>
+          <a href="../productos/productos.html?categoriaId=1" class="categoria-card__btn categoria-card__btn--ver" style="text-decoration: none; display: inline-block; text-align: center;">Ver Productos</a>
         </div>
       </div>
     </div>
 
     <div class="categoria-card">
-      <img class="categoria-card__img" src="" alt="Lockers de aprendices">
+      <img class="categoria-card__img" src="https://via.placeholder.com/290x180/e8e9ee/2c3250?text=Tecnologia" alt="Imagen de Tecnologia">
       <div class="categoria-card__body">
         <div class="categoria-card__header">
-          <p class="categoria-card__titulo">Lockers de aprendices</p>
-          <p class="categoria-card__id">#16</p>
+          <p class="categoria-card__titulo">Tecnologia</p>
+          <p class="categoria-card__id"></p>
         </div>
         <p class="categoria-card__desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500
+          Hardware, periféricos y dispositivos móviles.
         </p>
+        <p class="categoria-card__count">Cantidad de productos: <span class="count-value">0</span></p>
         <div class="categoria-card__actions">
-          <button class="categoria-card__btn categoria-card__btn--editar">Editar producto</button>
-          <button class="categoria-card__btn categoria-card__btn--eliminar">Eliminar producto</button>
+          <button type="button" class="categoria-card__btn categoria-card__btn--editar">Editar</button>
+          <button type="button" class="categoria-card__btn categoria-card__btn--eliminar">Eliminar</button>
+          <a href="../productos/productos.html?categoriaId=2" class="categoria-card__btn categoria-card__btn--ver" style="text-decoration: none; display: inline-block; text-align: center;">Ver Productos</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="categoria-card">
+      <img class="categoria-card__img" src="https://via.placeholder.com/290x180/e8e9ee/2c3250?text=Refrigeracion" alt="Imagen de Equipos de Refrigeracion">
+      <div class="categoria-card__body">
+        <div class="categoria-card__header">
+          <p class="categoria-card__titulo">Equipos de refrigeracion</p>
+          <p class="categoria-card__id"></p>
+        </div>
+        <p class="categoria-card__desc">
+          Sistemas de control de temperatura corporativos.
+        </p>
+        <p class="categoria-card__count">Cantidad de productos: <span class="count-value">0</span></p>
+        <div class="categoria-card__actions">
+          <button type="button" class="categoria-card__btn categoria-card__btn--editar">Editar</button>
+          <button type="button" class="categoria-card__btn categoria-card__btn--eliminar">Eliminar</button>
+          <a href="../productos/productos.html?categoriaId=3" class="categoria-card__btn categoria-card__btn--ver" style="text-decoration: none; display: inline-block; text-align: center;">Ver Productos</a>
         </div>
       </div>
     </div>
@@ -57,8 +76,9 @@
   </div>
 
   <div class="page-footer">
-    <button class="btn-crear">Crear productos</button>
+    <button type="button" class="btn-crear" id="btn-crear">Crear categorias</button>
   </div>
 
+  <script type="module" src="./main.js"></script>
 </body>
 </html>

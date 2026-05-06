@@ -1,86 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inventario - Productos</title>
     <link rel="stylesheet" href="productos.css">
     <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navegacion">
-        <a href="" class="navegacion__volver"><button class="btt__navegacion--volver">
-            <i class="bx bx-arrow-left-stroke"></i>
-        </button></a>
+        <a href="../categorias/categorias.html" class="navegacion__volver">
+            <button type="button" class="btt__navegacion--volver">
+                <i class="bx bx-arrow-left-stroke"></i>
+            </button>
+        </a>
     </nav>
 
     <main class="contenedor">
 
-        <h1 class="contenedor__titulo">PRODUCTOS-INMOBILIARIO</h1>
+        <h1 class="contenedor__titulo">CARGANDO PRODUCTOS...</h1>
 
-        <p class="contenedor__contexto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis officia doloribus recusandae commodi consectetur totam quis modi obcaecati beatae unde iusto non perferendis, odit esse velit est, ipsam itaque blanditiis?</p>
+        <p class="contenedor__contexto"></p>
 
         <section class="contenedor__tarjetas">
-
-            <div class="contenedor__tarjeta">
-
-                <div class="contenedor__imagen">
-                    
-                </div>
-
-                <div class="contenedor__informacion">
-                    <div class="contenedor__header">
-                        <h3 class="contenedor__producto">
-                            Lockers
-                        </h3>
-                        <span class="contenedor__id">#15</span>
-                    </div>
-                    
-                    <p class="contenedor__descripcion">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam!
-                    </p>
-                    <div class="contenedor__acciones">
-                        <button class="btn btn--editar">Editar Producto</button>
-                    
-                        <button class="btn btn--eliminar">Eliminar Producto</button>
-                    </div>
-                </div>
-            </div>
-
-            <button class="contenedor__button--crear btn">Crear producto</button>
-    
+            <button type="button" class="contenedor__button--crear btn">Crear producto</button>
         </section>
+
         <div class="modal-overlay form__oculto">
-            <form action="" class="form">
+            <form onsubmit="return false" class="form">
                 <div class="form__header">
-                    <h2 class="form__titulo">
-                        INFORMACION DEL PRODUCTO
-                    </h2>
+                    <h2 class="form__titulo">INFORMACIÓN DEL PRODUCTO</h2>
                     <button type="button" class="form__close" id="closeForm">X</button>
                 </div>
 
                 <div class="form__campos">
-                    <label for="nombre" class="form__label">Ingrese el nombre del producto: </label>
-                    <input type="text" id="nombre" class="form__input" placeholder="Nombre del producto">
+                    <label for="nombre" class="form__label" id="labelNombre">Nombre del producto:</label>
+                    <input type="text" id="nombre" class="form__input" placeholder="Ej. Monitor Gamer">
                 </div>
 
                 <div class="form__campos">
-                    <label for="desc" class="form__label">Ingrese la Descripcion: </label>
+                    <label for="desc" class="form__label">Descripción:</label>
                     <textarea id="desc" class="form__input" rows="3"></textarea>
                 </div>
 
                 <div class="form__campos">
-                    <label for="url" class="form__label">Ingrese la url de la imagen </label>
-
+                    <label for="url" class="form__label">Enlace de la imagen:</label>
                     <input type="text" id="url" class="form__input" placeholder="http://...">
                 </div>
 
                 <button type="submit" class="btn btn--guardar">Guardar cambios</button>
-
-
             </form>
         </div>
     </main>
+
+    <script type="module" src="productos.js"></script>
 </body>
 </html>
