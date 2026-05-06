@@ -1,0 +1,19 @@
+
+/* =========================BASE========================= */
+@import "./base/reset.css";
+@import "./base/variables.css";
+
+/* =========================LAYOUT========================= */
+@import "./layout/layout.css";
+
+/* =========================COMPONENTES========================= */
+@import "./components/buttons.css";
+@import "./components/cards.css";
+@import "./components/categorias.css";
+@import "./components/contenedor.css";
+@import "./components/form.css";
+@import "./components/links.css";
+@import "./components/navegacion.css";
+
+/* =========================PAGES========================= */
+@import "./page/categorias.css";
