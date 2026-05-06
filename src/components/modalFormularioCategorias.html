@@ -1,0 +1,22 @@
+<!-- Se realiza el componente para el momento de crear el formulario aparezca el formuñario -->
+<div class="modal-overlay form__oculto">
+    <form onsubmit="return false" class="form">
+        <div class="form__header">
+            <h2 class="form__titulo">Informacion de Categoria</h2>
+            <button type="button" class="form__close" id="closeForm">X</button>
+        </div>
+        <div class="form__campos">
+            <label for="nombre" class="form__label" id="labelNombre">Nombre de la categoria:</label>
+            <input type="text" id="nombre" class="form__input" placeholder="Categoria">
+        </div>
+        <div class="form__campos">
+            <label for="desc" class="form__label">Descripción:</label>
+            <textarea id="desc" class="form__input" rows="Ejemplo de Descripción"></textarea>
+        </div>
+        <div class="form__campos">
+            <label for="url" class="form__label">Enlace de la imagen:</label>
+            <input type="text" id="url" class="form__input" placeholder="http://...">
+        </div>
+        <button type="submit" class="btn btn--guardar">Guardar cambios</button>
+    </form>
+</div>
