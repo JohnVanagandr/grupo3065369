@@ -11,8 +11,8 @@
 .btts .btn{
     margin-left: 1vw;
     margin-top: 1vh;
-    height: 4vh;
-    width: 6vw;
+    height: 5vh;
+    width: 9vw;
 }
 
 .contenedor{
@@ -21,25 +21,25 @@
     gap: 5vh;
     padding-left: 5vw;
     height: 100vh;
-    background-color: red;
+    /* background-color: red; */
 }
 
 
 .contenedor__titulo{
-    background-color: blue;
+    /* background-color: blue; */
     height: 5vh;
 }
 
 .contenedor__contexto{
-    background-color: peru;
-    height: 3vh;
+    /* background-color: peru; */
+    height: 6vh;
 }
 
 .contenedor__tarjetas{
     display: flex;
     height: 70vh;
     width: 70vw;
-    background-color: crimson;
+    /* background-color: crimson; */
     border-radius: 25px;  
 }
 
@@ -48,13 +48,13 @@
     height: 25vh;
     width: 70vw;
     border-radius: 25px;  
-    background-color: aqua;
+    border:2px solid goldenrod;
 }
 .contenedor__imagen{
     background-image: url(imagenesProductos/download.jpg);
     background-repeat: no-repeat;
-    background-size: cover
-    ;
+    background-size: cover;
+    border-radius: 23px;
     height: 100%;
     width: 20%;
 }
@@ -65,6 +65,44 @@
     justify-content: center;
     gap: 5%;
     padding-left: 5%;
-    background-color: violet;
+    /* background-color: violet; */
     width: 75%;
 }
+
+.form .btn{
+    width: 10vw;
+}
+.form .btn:first-child{
+    width: 2vw;
+    align-self: flex-end;
+}
+.form{
+    display: flex;
+    background-color: rgba(255, 0, 0, 0.911);
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+    width: 40vw;
+    margin:0 25vw ;
+    padding: 2% 7%;
+}
+.form__oculto{
+    /* lucia quitalo cuando apliques las custom del formulario y ponlo cuando termines */
+    display: none;
+}
+.form__campos{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input{
+    height: 5vh;
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+}
+.form__input:focus{
+    outline: none;
+}
+
