@@ -1,18 +1,36 @@
 // Importación de funciones desde módulos
+import { Post } from "../helpers/posts.js";
+import { get } from "../helpers/get.js"
 //importamos la funcion de eliminar categorias
-import { eliminarCategoria } from '../helpers/delete.js';
-import { cargarCategorias } from './tareas/actualizarInventario.js';
 
+import { eliminarCategoria} from "../helpers/delete.js"
+//Realizar importacion para crear las tarjetas
+import { crearCategoriaCard } from "../components/tarjeta.js";
 
 // Carga inicial de categorías al cargar la página
-cargarCategorias();
+const ContTarjetas = document.querySelector("#card-container")
 
-// // Configuración de eventos al cargar el DOM
-// document.addEventListener("DOMContentLoaded", () => {
-//     const botonCrear = document.getElementById("btn-crear");
-//     botonCrear.addEventListener("click",crearTarea);
-// });
+// Configuración de eventos al cargar el DOM
+document.addEventListener("DOMContentLoaded", async function(e){
+    
+    e.preventDefault();
 
+    const datos = await get("categorias");
+    
+    datos.forEach(element => {
+
+        const tarjeta = crearCategoriaCard(element);
+
+        console.log(tarjeta);
+        ContTarjetas.appendChild(tarjeta);
+    });
+    
+    console.log("Se cargaron las cards");
+})
+
+
+//importamos la funcion de eliminar categorias
+// import { log } from "console";
 //seleccionamos el contenedor de las caeggorias y se guarda en uns cosnt llamada contendero
 const contenedor = document.querySelector('.cards-lista');
 //click para activar la eliminacion

@@ -1,0 +1,12 @@
+.navegacion{
+    padding: 10px;
+    display: flex;
+    width: 80vw;
+    height: 10vh;
+    justify-self: center;
+}
+
+.navegacion__volver{
+    height: 90%;
+    width: 4%;
+}

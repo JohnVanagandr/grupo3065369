@@ -1,12 +1,14 @@
 export const crearCategoriaCard = (categoria) => {
-    const nombreSlug = encodeURIComponent(categoria.nombre);
+
+    console.log(categoria.nombre);
+    
 
     const card = document.createElement('div');
     card.classList.add('categoria-card');
 
     const img = document.createElement('img');
     img.classList.add('categoria-card__img');
-    // img.src = `https://via.placeholder.com/290x180/e8e9ee/2c3250?text=${nombreSlug}`;
+    img.src = `$categoria`;
     img.alt = `Imagen de ${categoria.nombre}`;
 
     const body = document.createElement('div');
@@ -34,10 +36,10 @@ export const crearCategoriaCard = (categoria) => {
     count.classList.add('categoria-card__count');
     count.textContent = 'Cantidad de productos: ';
 
-    const countSpan = document.createElement('span');
-    countSpan.classList.add('count-value');
-    countSpan.textContent = categoria.totalProductos ?? 0;
-    count.appendChild(countSpan);
+    // const countSpan = document.createElement('span');
+    // countSpan.classList.add('count-value');
+    // countSpan.textContent = categoria.totalProductos ?? 0;
+    // count.appendChild(countSpan);
 
     const actions = document.createElement('div');
     actions.classList.add('categoria-card__actions');
@@ -69,7 +71,6 @@ export const crearCategoriaCard = (categoria) => {
     body.appendChild(count);
     body.appendChild(actions);
 
-    card.appendChild(img);
     card.appendChild(body);
 
     return card;
