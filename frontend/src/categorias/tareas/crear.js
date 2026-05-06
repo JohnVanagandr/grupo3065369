@@ -9,7 +9,7 @@ export const crearTarea = async () => {
     if (!boton.value) return;
 
     // Llamamos a la función createPost para crear una nueva tarea en el servidor
-    await createPost ({
+    await createProduct ({
         userId: 1,
         title: boton.value,
         body: "..."
