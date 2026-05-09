@@ -3,3 +3,7 @@ export * from "./get.js";
 export * from "./posts.js";
 export * from "./put.js";
 export * from "./loadComponents.js";
+export * from "./showError.js";
+export * from "./clearError.js";
+export * from "./isValidInput.js";
+export * from "./validateForm.js";
