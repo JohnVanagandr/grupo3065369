@@ -1,5 +1,5 @@
 
-import { get, Post, remove, Put,loadComponents } from "../helpers/index.js";
+import { get, Post, remove, Put,loadComponents,validateForm,clearError } from "../helpers/index.js";
 
 async function init(){
 
@@ -29,27 +29,22 @@ async function init(){
     const parametrosURL = new URLSearchParams(window.location.search);
     const CATEGORIA_ACTUAL_ID = parametrosURL.get("categoriaId") || "1"; 
     
-    // Validaciones 
-    
-    function showError(errorElement, message) {
-        errorElement.textContent = message;
+    function handleInputError(inputElement, errorElement) {
+
+        inputElement.addEventListener("input", () => {
+
+            if (inputElement.value.trim().length > 0) {
+
+                clearError(errorElement, inputElement);
+
+            }
+
+        });
     }
-    
-    function clearError(errorElement, inputElement) {
-        errorElement.textContent = '';
-        inputElement.classList.remove('error');
-    }
-    
-    function isValidInput(input, message, errorElement) {
-        if (!input.value.trim()) {
-            showError(errorElement, message);
-            input.classList.add('error');
-            return false
-        }
-        clearError(errorElement, input);
-        return true;
-    }
-    
+    handleInputError(inputNombre, errorNombre);
+    handleInputError(inputDesc, errorDesc);
+    handleInputError(inputUrl, errorUrl);
+
     // Renderizado dinámico de la página
     async function cargarYRenderizarPagina() {
         try {
@@ -74,24 +69,73 @@ async function init(){
     
             // Inyectamos las tarjetas de los productos que corresponden a esta categoría
             productosFiltrados.forEach(producto => {
+
+                // Tarjeta principal
                 const tarjetaHTML = document.createElement("div");
                 tarjetaHTML.classList.add("contenedor__tarjeta");
-                
-                tarjetaHTML.innerHTML = `
-                    <div class="contenedor__imagen" style="background-image: url('${producto.imagen}')"></div>
-                    <div class="contenedor__informacion">
-                        <div class="contenedor__header">
-                            <h3 class="contenedor__producto">${producto.nombre}</h3>
-                            <span class="contenedor__id">#${producto.id}</span>
-                        </div>
-                        <p class="contenedor__descripcion">${producto.descripcion}</p>
-                        <div class="contenedor__acciones">
-                            <button type="button" class="btn btn--editar" data-id="${producto.id}">Editar Producto</button>
-                            <button type="button" class="btn btn--eliminar" data-id="${producto.id}">Eliminar Producto</button>
-                        </div>
-                    </div>
-                `;
-                // Se inserta justo antes del botón de crear para mantener el diseño limpio
+
+                // Imagen
+                const imagenProducto = document.createElement("img");
+                imagenProducto.src = producto.imagen;
+                imagenProducto.alt = producto.nombre;
+                imagenProducto.classList.add("contenedor__imagen");
+
+                // Contenedor información
+                const contenedorInformacion = document.createElement("div");
+                contenedorInformacion.classList.add("contenedor__informacion");
+
+                // Header
+                const contenedorHeader = document.createElement("div");
+                contenedorHeader.classList.add("contenedor__header");
+
+                // Nombre producto
+                const nombreProducto = document.createElement("h3");
+                nombreProducto.classList.add("contenedor__producto");
+                nombreProducto.textContent = producto.nombre;
+
+                // ID producto
+                const idProducto = document.createElement("span");
+                idProducto.classList.add("contenedor__id");
+                idProducto.textContent = `#${producto.id}`;
+
+                // Descripción
+                const descripcionProducto = document.createElement("p");
+                descripcionProducto.classList.add("contenedor__descripcion");
+                descripcionProducto.textContent = producto.descripcion;
+
+                // Acciones
+                const contenedorAcciones = document.createElement("div");
+                contenedorAcciones.classList.add("contenedor__acciones");
+
+                // Botón editar
+                const btnEditar = document.createElement("button");
+                btnEditar.type = "button";
+                btnEditar.classList.add("btn", "btn--editar");
+                btnEditar.dataset.id = producto.id;
+                btnEditar.textContent = "Editar Producto";
+
+                // Botón eliminar
+                const btnEliminar = document.createElement("button");
+                btnEliminar.type = "button";
+                btnEliminar.classList.add("btn", "btn--eliminar");
+                btnEliminar.dataset.id = producto.id;
+                btnEliminar.textContent = "Eliminar Producto";
+
+                // Armado del DOM
+                contenedorHeader.appendChild(nombreProducto);
+                contenedorHeader.appendChild(idProducto);
+
+                contenedorAcciones.appendChild(btnEditar);
+                contenedorAcciones.appendChild(btnEliminar);
+
+                contenedorInformacion.appendChild(contenedorHeader);
+                contenedorInformacion.appendChild(descripcionProducto);
+                contenedorInformacion.appendChild(contenedorAcciones);
+
+                tarjetaHTML.appendChild(imagenProducto);
+                tarjetaHTML.appendChild(contenedorInformacion);
+
+                // Insertar antes del botón crear
                 contenedorTarjetas.insertBefore(tarjetaHTML, btnAbrirCrear);
             });
     
@@ -193,14 +237,29 @@ async function init(){
     formulario.addEventListener("submit", async (e) => {
         e.preventDefault();
     
-        const esNombreValido = isValidInput(inputNombre, "El nombre es obligatorio", errorNombre);
-        const esDescValida = isValidInput(inputDesc, "La descripción no puede estar vacía", errorDesc);
-        const esUrlValida = isValidInput(inputUrl, "Debes poner un enlace de imagen", errorUrl);
-    
-        // Si alguna falla, detenemos la ejecución
-        if (!esNombreValido || !esDescValida || !esUrlValida) {
-            return; 
-        }
+        const formularioValido = validateForm(formulario, {
+
+            nombre: {
+                required: true,
+                message: "El nombre es obligatorio",
+                errorId: "errorNombre"
+            },
+
+            desc: {
+                required: true,
+                message: "La descripción no puede estar vacía",
+                errorId: "errorDesc"
+            },
+
+            url: {
+                required: true,
+                type: "url",
+                message: "Debes poner un enlace de imagen",
+                errorId: "errorUrl"
+            }
+        });
+
+        if (!formularioValido) return;
     
         const datosCampos = {
             nombre: inputNombre.value.trim(),
