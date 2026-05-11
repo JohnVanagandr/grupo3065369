@@ -1,11 +1,11 @@
 // import { get } from "./helpers/get.js";
+import { categorias } from "./modulos/categorias/listarCategorias.js";
 import { productos } from "./modulos/productos/listarProductos.js";
 import { get } from "./utilidad/solicitudes.js";
 
 
+const nav = document.querySelector("nav");
 const cardContainer = document.getElementById('card-container');
-const listar_productos = document.querySelector("#listarProductos");
-const listar_categorias = document.querySelector("#listarCategorias");
 const editable = document.querySelector("#editable");
 
 
@@ -16,19 +16,21 @@ const armarProductos = async () => {
 }
 const armarCategorias = async () => {
   const data = await get('categorias');
-  const componente = productos(data)
+  const componente = categorias(data)
   editable.innerHTML = componente
 }
 
 
-listar_productos.addEventListener('click', (e) => {
+nav.addEventListener('click', (e) => {
   e.preventDefault();
-  armarProductos();
-})
-listar_categorias.addEventListener('click', (e) => {
-  e.preventDefault();
-  armarCategorias();
-})
+  if (e.target.matches('#listarProductos')) {
+    armarProductos();
+  }
+  if (e.target.matches('#listarCategorias')) {
+    armarCategorias();
+  }
+});
+
 
 // async function cargarInventario() {
 
