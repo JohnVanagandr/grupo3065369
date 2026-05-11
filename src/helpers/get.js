@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "http://10.0.103.147:3001/";
 
 export const get = async (endpoint) => {
     try {
