@@ -1,6 +1,6 @@
 
 //la direccion donde esta nuestra base de datos
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "http://10.0.103.147:3001/";
 
 //funcion para elimninar categorias, dentro de la base de datos
 export const remove = async (endpoint) => {
