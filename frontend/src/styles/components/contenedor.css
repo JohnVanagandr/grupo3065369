@@ -47,12 +47,10 @@
     border:2px solid var(--color-white);
 }
 .contenedor__imagen{
-    background-image: url(imagenesProductos/download.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 290px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 23px 0 0 23px;
-    height: 100%;
-    width: 30%;
 }
 
 .contenedor__informacion{
