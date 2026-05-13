@@ -1,18 +1,18 @@
 // import { get } from "./helpers/get.js";
-import { categorias } from "./modulos/categorias/listarCategorias.js";
-import { productos } from "./modulos/productos/listarProductos.js";
+
 import { enrrutador } from "./router/router.js";
-import { get } from "./utilidad/solicitudes.js";
 
 
 const nav = document.querySelector("nav");
-const cardContainer = document.getElementById('card-container');
 const editable = document.querySelector("#editable");
 
+const arrancar = () => {
+  enrrutador(editable)
+}
 
-window.addEventListener('hashchange', enrrutador);
+window.addEventListener('hashchange', arrancar);
 
-document.addEventListener('DOMContentLoaded', enrrutador)
+document.addEventListener('DOMContentLoaded', arrancar)
 
 
 // async function cargarInventario() {
