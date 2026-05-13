@@ -1,10 +1,9 @@
 export const categorias = (data) => {
-  return data.map(({ nombre, descripcion }) => {
-    return `
+  return data.map(({ nombre, descripcion }) => `
     <div>
       <h2>${nombre}</h2>
       <p>${descripcion}</p>
     </div>
   `
-  });
+  ).join(' ');
 }
