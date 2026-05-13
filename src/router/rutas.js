@@ -1,5 +1,6 @@
-import { categoriasControlador } from "../modulos/categorias/categoriasControlador.js";
-import { categorias } from "../modulos/categorias/listarCategorias.js";
+import { vistaCategoria} from "../modulos/categorias/vistaCategoria.js";
+import { categoriasControlador } from "../modulos/categorias/categoriasControlador.js"
+
 import {
   vistaProductos,
   productosControlador
@@ -18,7 +19,7 @@ export const rutas = [
   },
   {
     'ruta': '#/categorias',
-    vista: categorias,
+    vista: vistaCategoria,
     controlador: categoriasControlador
   }
 ];

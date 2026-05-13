@@ -4,6 +4,7 @@ export const productos = (data) => {
     <div>
       <h2>${nombre}</h2>
       <p>${descripcion}</p>
+      <button>Editar productos</button>
     </div>
   `
   ).join(' ');
