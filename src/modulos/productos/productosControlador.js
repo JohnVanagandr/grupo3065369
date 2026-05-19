@@ -1,5 +1,5 @@
 import { get } from "../../utilidad/solicitudes";
-import { productos } from "./listarProductos";
+import { productos } from "./listarProductos.js";
 
 export const productosControlador = async () => {
   const editable = document.querySelector('div > div');

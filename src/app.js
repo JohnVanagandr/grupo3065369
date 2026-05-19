@@ -8,6 +8,7 @@ const editable = document.querySelector("#editable");
 
 const arrancar = () => {
   enrrutador(editable)
+  enrrutador()
 }
 
 window.addEventListener('hashchange', arrancar);
