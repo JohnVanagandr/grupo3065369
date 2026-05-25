@@ -1,8 +1,9 @@
-const BASE_URL = "http://localhost:3001/";
+import { url } from "./config";
+
 
 export const get = async (endpoint) => {
     try {
-        const response = await fetch(`${BASE_URL}${endpoint}`);
+        const response = await fetch(`${url}${endpoint}`);
         if (!response.ok) {
             throw new Error("Error en GET");
         }

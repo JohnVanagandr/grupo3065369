@@ -1,11 +1,11 @@
+import { url } from "./config";
 
 //la direccion donde esta nuestra base de datos
-const BASE_URL = "http://10.0.103.147:3001/";
 
 //funcion para elimninar categorias, dentro de la base de datos
 export const remove = async (endpoint) => {
     //se le indica al servidor que borre los datos en la ruta indicada por el endpoitn
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
+    const response = await fetch(`${url}${endpoint}`, {
         method: "DELETE",
     });
 //si el servidor responde mal, lanza un aviso de error
