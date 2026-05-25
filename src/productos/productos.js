@@ -1,5 +1,5 @@
 
-import { get, Post, remove, Put,loadComponents,validateForm,clearError } from "../helpers/index.js";
+import { get, Post, remove, Put,loadComponents,validateForm,clearError } from "@/helpers/index.js";
 
 async function init(){
 

@@ -1,8 +1,10 @@
-import { get } from "../../utilidad/solicitudes";
+import { get } from "@/utilidad/solicitudes";
+import { productos } from "./listarProductos";
 
 export const productosControlador = async () => {
+  const editable = document.querySelector('div > div');
   const data = await get('productos');
-  console.log(data);
 
-  // const componente = productos(data)
+  editable.innerHTML = productos(data)
+
 }

@@ -14,5 +14,13 @@
   "type": "module",
   "devDependencies": {
     "vite": "^8.0.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnVanagandr/grupo3065369.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JohnVanagandr/grupo3065369/issues"
+  },
+  "homepage": "https://github.com/JohnVanagandr/grupo3065369#readme"
 }
