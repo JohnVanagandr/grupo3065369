@@ -1,12 +1,17 @@
 export const vistaProductos = (producto) => {
     // Constante de contenedor
     const container = document.createElement("div");
+    container.className = "componente_eliminar";
+
     const button = document.createElement("button");
 
+    // Boton de eliminar
+    button.className = "btn-eliminar";
+    button.textContent = "Eliminar";
 
-    button=document.getElementsByClassName("");
+    // Unir todos los items al contenedor
+    container.appendChild(button);
 
-    // Container
-    container = document.appendChild(button);
-
+    // retornar el contenedor
+    return container;
 }

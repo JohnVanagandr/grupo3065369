@@ -1,4 +1,4 @@
-import { Put } from "../../helpers/index.js";
+import { Put } from "../../helpers/api/put.js";
 
 export const actualizarproducto = async () => {
     // se obtiene el id del producto a actualizar
