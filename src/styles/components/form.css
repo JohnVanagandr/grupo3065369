@@ -1,10 +1,9 @@
-
 .form .btn{
     align-self: center;
     margin-top: 2vh;
 }
 .form .btn:first-child{
-    width: 2vw;
+    width: 15vw;
     align-self: flex-end;
 }
 .form{
@@ -36,6 +35,13 @@
     margin-bottom: 15px;
 }
 
+.form_btn{
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    gap: 10px;
+}
+
+
 .form__input{
     height: 5vh;
     background-color: var(--color-gray-100);
@@ -59,17 +65,6 @@ textarea.form__input{
     width: 100%;
     position: relative;
     margin-bottom: 20px;
-}
-
-.form__close {
-    background: none;
-    border: none;
-    font-size: 1rem; 
-    padding: 0;
-    width: auto;
-    position: absolute;
-    right: -20px;
-    top: -10px;
 }
 
 .error-msg{

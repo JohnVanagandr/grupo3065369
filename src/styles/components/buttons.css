@@ -33,6 +33,10 @@
     color: white;
 }
 
+.btn--cancelar {
+    background-color: var(--color-red) ;
+}
+
 .btn-crear {
   background-color: #8a8fa8;
   color: #ffffff;
