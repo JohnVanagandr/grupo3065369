@@ -10,7 +10,7 @@ export const vistaProductos = (producto) => {
     button.textContent = "Eliminar";
 
     // Unir todos los items al contenedor
-    container = document.appendChild(button);
+    container.appendChild(button);
 
     // retornar el contenedor
     return container;
