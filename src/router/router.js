@@ -1,25 +1,12 @@
 import { rutas } from "./rutas.js";
 
-export const enrrutador = () => {
+export const enrrutador = async (app) => {
   let hash = window.location.hash;
 
-  let temporal = rutas.find((ruta) => ruta.ruta == hash);
+  let temporal = rutas.find((ruta) => {
+    return ruta.ruta == hash;
+  })
 
-  temporal.controlador()
-
-
-
-  // if (hash == "#/categorias") {
-
-  //   console.log(rutas);
-  //   console.log(hash);
-
-  //   // console.log(rutas().armarCategorias());
-
-  //   // rutas().armarCategorias()
-  // }
-  // if (hash == "#/productos") {
-  //   // rutas.armarProductos()
-  //   console.log(rutas);
-  // }
+  app.innerHTML = temporal.vista();
+  await temporal.controlador()
 }
