@@ -18,4 +18,3 @@ export const categorias = (data) => {
   ).join(' '); // Para poder quitar las comas 
 }
 
-
