@@ -1,8 +1,9 @@
-import { get } from "../../utilidad/solicitudes";
+import { get } from "@/utilidad/solicitudes";
+import { categorias } from "./listarCategorias";
 
 export const categoriasControlador = async () => {
+  const editable = document.querySelector('div > div');
   const data = await get('categorias');
-  console.log(data);
 
-  // const componente = categorias(data)
+  editable.innerHTML = categorias(data);
 }
