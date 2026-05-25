@@ -1,6 +1,6 @@
 import { Post } from "../../helpers/index.js";
 
-const actualizarproducto = async () => {
+export const actualizarproducto = async () => {
     // se obtiene el id del producto a actualizar
     const id = document.getelementbyid('id-producto').value;
     
