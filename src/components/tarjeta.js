@@ -1,7 +1,7 @@
 export const crearCategoriaCard = (categoria) => {
 
     console.log(categoria.nombre);
-    
+
 
     const card = document.createElement('div');
     card.classList.add('categoria-card');
@@ -48,6 +48,12 @@ export const crearCategoriaCard = (categoria) => {
     btnEditar.type = 'button';
     btnEditar.classList.add('categoria-card__btn', 'categoria-card__btn--editar');
     btnEditar.textContent = 'Editar';
+
+
+    // Evento para editar el Productos o Categorias
+    btnEditar.addEventListener('click', () => {
+        window.location.hash = '#/productos/editar'; // o #/categorias/editar
+    });
 
     const btnEliminar = document.createElement('button');
     btnEliminar.type = 'button';
