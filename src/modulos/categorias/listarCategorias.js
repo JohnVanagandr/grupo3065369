@@ -6,6 +6,9 @@ export const categorias = (data) => {
       <p>${descripcion}</p>
       <button>Editar Categorias</button>
     </div>
+    <Button>Editar Categoria</Button>
   `
-  ).join(' ');
+  ).join(' '); // Para poder quitar las comas 
 }
+
+

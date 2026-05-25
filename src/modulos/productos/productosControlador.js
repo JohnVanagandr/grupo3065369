@@ -1,4 +1,4 @@
-import { get } from "../../utilidad/solicitudes";
+import { get } from "@/utilidad/solicitudes";
 import { productos } from "./listarProductos";
 
 export const productosControlador = async () => {

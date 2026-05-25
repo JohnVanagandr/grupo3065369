@@ -7,6 +7,6 @@ export const enrrutador = async (app) => {
     return ruta.ruta == hash;
   })
 
-  app.innerHTML = temporal.vista()
+  app.innerHTML = temporal.vista();
   await temporal.controlador()
 }
