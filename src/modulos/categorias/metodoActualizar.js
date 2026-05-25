@@ -13,7 +13,7 @@ const actualizarproducto = async () => {
 
     try {
         // realiza la conexion al servidor usando la url y el id
-        const resultado = await post('inventario', id, datosactualizados);
+        const resultado = await post('categoria', id, datosactualizados);
 
         if (resultado) {
             // en caso de exito se muestra en consola
@@ -25,13 +25,3 @@ const actualizarproducto = async () => {
         console.error('error al ejecutar la update:', error);
     }
 };
-
-// se obtiene el boton de actualizar del dom
-// const boton = document.getelementbyid('btn-actualizar');
-
-// se agrega el evento click para ejecutar la funcion
-// boton.addeventlistener('click', function(e) {
-//     // evita que el formulario recargue la pagina
-//     e.preventdefault();
-//     actualizarproducto();
-// });

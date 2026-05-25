@@ -1,9 +1,9 @@
-const BASE_URL = "http://10.0.103.147:3001/";
+const BASE_URL = "http://10.0.103.206:3001/";
 
-export const Post = async (endpoint, data) => {
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
+export const Post = async (endpoint, id, datosactualizados) => {
+    const response = await fetch(`${BASE_URL}${endpoint}/${id}`, {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(datosactualizados),
         headers: {
             "Content-type": "application/json",
         },
