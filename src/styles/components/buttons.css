@@ -33,6 +33,10 @@
     color: white;
 }
 
+.btn--cancelar {
+    background-color: var(--color-red) ;
+}
+
 .btn-crear {
   background-color: #8a8fa8;
   color: #ffffff;
@@ -63,4 +67,14 @@
     border:none;
 }
 
-
+.btn-eliminar{
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -11,7 +11,8 @@ export const categorias = (data) => {
         <button class="categoria-card__btn categoria-card__btn--editar">
           Editar Categoría
         </button>
-    
+
+        
   </div>
 </div>
   `
