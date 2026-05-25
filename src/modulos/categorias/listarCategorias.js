@@ -1,12 +1,20 @@
 export const categorias = (data) => {
   return data.map(({ nombre, descripcion }) => `
-    <div>
-      <h2>${nombre}</h2>
-      <p>${descripcion}</p>
-    </div>
-    <Button>Editar Categoria</Button>
+    <div class="categoria-card">
+      <div class="categoria-card__body">
+    
+        <div class="categoria-info">
+          <h3 class="categoria-card__titulo">${nombre}</h3>
+          <p class="categoria-card__desc">${descripcion}</p>
+        </div>
+    
+        <button class="categoria-card__btn categoria-card__btn--editar">
+          Editar Categoría
+        </button>
+    
+  </div>
+</div>
   `
   ).join(' '); // Para poder quitar las comas 
 }
-
 
