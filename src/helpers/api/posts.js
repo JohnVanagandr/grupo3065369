@@ -1,7 +1,7 @@
-const BASE_URL = "http://10.0.103.147:3001/";
+import { url } from "./config";
 
 export const Post = async (endpoint, data) => {
-    const response = await fetch(`${BASE_URL}${endpoint}`, {
+    const response = await fetch(`${url}${endpoint}`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

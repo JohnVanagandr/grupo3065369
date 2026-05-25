@@ -1,9 +1,9 @@
-const API_URL = "http://localhost:3000";
+import { url } from "../helpers/api/config";
 
 
 export async function actualizarCategoriaDelProducto(productoId, nuevaCategoriaId) {
     try {
-        const respuesta = await fetch(`${API_URL}/productos/${productoId}`, {
+        const respuesta = await fetch(`${url}/productos/${productoId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
