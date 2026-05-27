@@ -9,12 +9,10 @@ export const productos = (data) => {
           <p class="categoria-card__desc">${descripcion}</p>
         </div>
     
-        <button class="categoria-card__btn categoria-card__btn--editar">
-          Editar Producto
-        </button>
+        <div class="contenedor-acciones" data-id="${id}"></div>
     
-  </div>
-</div>
-  `
+      </div>
+    </div>
+    `
   ).join(' ');// Para quitar las comas
 }

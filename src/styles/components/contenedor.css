@@ -28,9 +28,9 @@
     border-radius: 25px;  
 }
 
-.contenedor__acciones{
+.contenedor-acciones{
     display: flex;
-    gap: 20px;
+    justify-content: space-between; 
 }
 .contenedor__button--crear{
     margin: 10px;
