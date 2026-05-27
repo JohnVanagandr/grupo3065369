@@ -14,7 +14,14 @@ export const productosControlador = async () => {
   contenedores.forEach(contenedor => {
     // Obtenemos el id mediante data-id (y no por clase) porque cada fila/tarjeta tiene un identificador único de base de datos necesario para las acciones de editar/eliminar
     const id = contenedor.getAttribute('data-id');
-    contenedor.appendChild(btnEditar(id));
-    contenedor.appendChild(btnEliminar(id));
+    const editarBtn = btnEditar("productos", id);
+    const eliminarBtn = btnEliminar(id);
+    contenedor.appendChild(editarBtn);
+    contenedor.appendChild(eliminarBtn);
+
+    editarBtn.addEventListener('click', () => {
+      sessionStorage.setItem("editId", id);
+      window.location.hash = "#/productos/editar";
+      });
   });
 }
