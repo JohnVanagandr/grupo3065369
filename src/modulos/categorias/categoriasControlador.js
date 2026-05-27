@@ -1,13 +1,13 @@
 import { get } from "@/utilidad/solicitudes";
-import { productos } from "./listarProductos";
+import { categorias } from "./listarCategorias";
 import { btnEliminar } from "@/components/btnEliminar";
 import { btnEditar } from "@/components/btnEditar";
 
-export const productosControlador = async () => {
+export const categoriasControlador = async () => {
   const editable = document.querySelector('div > div');
-  const data = await get('productos');
+  const data = await get('categorias');
 
-  editable.innerHTML = productos(data);
+  editable.innerHTML = categorias(data);
 
   const contenedores = editable.querySelectorAll('.contenedor-acciones');
   // Usamos forEach ya que hay múltiples contenedores de acciones (uno por cada elemento de la lista) y debemos recorrerlos todos
