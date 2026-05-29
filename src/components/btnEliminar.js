@@ -1,4 +1,6 @@
-export const vistaProductos = (producto) => {
+const contenedor = document.querySelector("#aparecer");
+
+const vistaProductos = () => {
     // Constante de contenedor
     const container = document.createElement("div");
     container.className = "componente_eliminar";
@@ -15,3 +17,13 @@ export const vistaProductos = (producto) => {
     // retornar el contenedor
     return container;
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btnEliminar = vistaProductos();
+    
+    console.log(btnEliminar);
+
+    contenedor.appendChild(btnEliminar);
+
+});
