@@ -7,6 +7,12 @@ export const productos = (data) => {
       <button>Editar productos</button>
     </div>
     <Button>Editar Producto</Button>
+
+     <button
+        class="btn-eliminar"
+        data-id="${id}">
+        Eliminar
+      </button>
   `
   ).join(' ');// Para quitar las comas
 }
