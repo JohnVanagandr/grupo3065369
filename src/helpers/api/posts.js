@@ -3,7 +3,7 @@ import { url } from "./config";
 export const Post = async (endpoint, data) => {
     const response = await fetch(`${url}${endpoint}`, {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(datosactualizados),
         headers: {
             "Content-type": "application/json",
         },
