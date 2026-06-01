@@ -15,6 +15,11 @@ export const vistaFormularioProductos = () => {
             <input type="text" id="nombre" class="form__input">
         </div>
 
+        <div class="form__campos" id="contenedorCategoria">
+            <label class="form__label">Categoría:</label>
+            <!-- Aquí se inyectará el select dinámicamente -->
+        </div>
+
         <div class="form__campos">
             <label for="desc">Descripción:</label>
             <textarea id="desc" class="form__input"></textarea>
