@@ -1,6 +1,4 @@
 import { Post } from "../../helpers/index.js";
-import { get } from "../../helpers/index.js";
-import { remove } from "../../helpers/index.js";
 
 const actualizarproducto = async () => {
     // se obtiene el id del producto a actualizar
@@ -37,24 +35,3 @@ const actualizarproducto = async () => {
 //     e.preventdefault();
 //     actualizarproducto();
 // });
-
-
-import { crearCategoriaCard } from '../../components/tarjeta.js';
-
-const cardContainer = document.getElementById('card-container');
-
-export const cargarCategorias = async () => {
-    try {
-    const categorias = await get('categorias');
-
-    categorias.forEach(categoria => {
-        const card = crearCategoriaCard(categoria);
-        cardContainer.appendChild(card);
-    });
-
-    } catch (error) {
-    const msg = document.createElement('p');
-    msg.textContent = 'Error al cargar las categorías.';
-    cardContainer.appendChild(msg);
-    }
-};

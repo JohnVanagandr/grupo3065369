@@ -1,3 +1,4 @@
+
 export const categorias = (data) => {
   return data.map(({ nombre, descripcion, id }) =>
     `

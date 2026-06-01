@@ -5,7 +5,9 @@ export const get = async (endpoint) => {
             throw new Error("Error en GET");
         }
         return await response.json();
-    } catch (error) {
+    } 
+    
+    catch (error) {
         console.error(error);
         throw error;
     }

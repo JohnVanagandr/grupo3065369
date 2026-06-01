@@ -1,4 +1,4 @@
-export const vistaFormulario = () => {
+export const vistaFormularioCategorias = () => {
   return `
     <form class="form">
         <div class="form__header">
@@ -26,5 +26,5 @@ export const vistaFormulario = () => {
             <button type="button" class="btn btn--cancelar" id="cancelForm">Cancelar</button>
         </div>
     </form>
-  `;
+  `; // Para poder quitar las comas
 };
