@@ -26,5 +26,5 @@ export const vistaFormulario = () => {
             <button type="button" class="btn btn--cancelar" id="cancelForm">Cancelar</button>
         </div>
     </form>
-  `.join(' '); // Para poder quitar las comas
+  `;
 };
