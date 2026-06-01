@@ -9,4 +9,5 @@ export const enrrutador = async (app) => {
 
   app.innerHTML = temporal.vista();
   await temporal.controlador()
+  
 }

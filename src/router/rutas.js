@@ -19,8 +19,8 @@ export const rutas = [
   },
   {
     'ruta': '#/productos/editar',
-    vista: vistaProductos,
-    controlador: productosControlador
+    vista: vistaFormulario,
+    controlador: formularioControlador
   },
   
   // Esta es la ruta de categorias
@@ -32,7 +32,7 @@ export const rutas = [
   // Ruta para la edicion de la categoria
   {
     'ruta': '#/categorias/editar',
-    vista: vistaCategorias,
-    controlador: categoriasControlador
+    vista: vistaFormulario,
+    controlador: formularioControlador
   } 
 ]
