@@ -1,19 +1,20 @@
-import { EditManager } from '../../helpers/editManager.js';
+import { get } from '../../helpers/api/index.js' 
 
-export function inicializarFormularioEdicion() {
-    const data = EditManager.getEditData();
+export async function inicializarFormularioEdicion(id) {
+
+    const data = await await get(`productos/${id}`);
+
+    console.log(data);
     
     // Si hay datos, los inyectamos en el formulario
     if (data) {
         // Usamos un operador de encadenamiento opcional (?.) por seguridad, 
         // evitando errores si el elemento no existe en el DOM.
-        const idInput = document.getElementById('id');
         const nombreInput = document.getElementById('nombre');
         const descInput = document.getElementById('desc');
         const urlInput = document.getElementById('url');
         const tituloForm = document.querySelector('.form__titulo');
 
-        if (idInput) idInput.value = data.id;
         if (nombreInput) nombreInput.value = data.nombre;
         if (descInput) descInput.value = data.descripcion; // Coincide con tu objeto
         if (urlInput) urlInput.value = data.imagen;

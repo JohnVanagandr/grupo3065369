@@ -16,8 +16,8 @@ export const categoriasControlador = async () => {
     const id = contenedor.getAttribute('data-id');
     const editarBtn = btnEditar("categorias", id);
     const eliminarBtn = btnEliminar(id);
-    contenedor.appendChild(btnEditar(editarBtn));
-    contenedor.appendChild(btnEliminar(eliminarBtn));
+    contenedor.appendChild(editarBtn);
+    contenedor.appendChild(eliminarBtn);
 
     editarBtn.addEventListener('click', () => {
       sessionStorage.setItem("editId", id);

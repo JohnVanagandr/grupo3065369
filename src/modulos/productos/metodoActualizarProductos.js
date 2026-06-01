@@ -2,18 +2,19 @@ import { Put } from "../../helpers/api/put.js";
 
 export const actualizarproducto = async () => {
     // se obtiene el id del producto a actualizar
-    const id = document.querySelector('#id-producto').value;
+    const id = document.querySelector('#id').value;
+    
+    console.log(id);
     
     // se crea el objeto con los nuevos datos
     const datosactualizados = {
         nombre: document.querySelector('#nombre').value,
-        cantidad: document.querySelector('#cantidad').value,
-        categoria: document.querySelector('#categoria').value
+        descripcion: document.querySelector('#desc').value,
     };
 
     try {
         // realiza la conexion al servidor usando la url y el id
-        const resultado = await Put('categoria', id, datosactualizados);
+        const resultado = await Put('productos', id, datosactualizados);
 
         if (resultado) {
             // en caso de exito se muestra en consola
