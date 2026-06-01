@@ -1,29 +1,8 @@
-const contenedor = document.querySelector("#aparecer");
-
-const vistaProductos = () => {
-    // Constante de contenedor
-    const container = document.createElement("div");
-    container.className = "componente_eliminar";
-
+export const btnEliminar = (id) => {
     const button = document.createElement("button");
-
-    // Boton de eliminar
-    button.className = "btn-eliminar";
+    button.className = "categoria-card__btn categoria-card__btn--eliminar";
     button.textContent = "Eliminar";
+    button.dataset.id = id;
 
-    // Unir todos los items al contenedor
-    container.appendChild(button);
-
-    // retornar el contenedor
-    return container;
+    return button;
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const btnEliminar = vistaProductos();
-    
-    console.log(btnEliminar);
-
-    contenedor.appendChild(btnEliminar);
-
-});
