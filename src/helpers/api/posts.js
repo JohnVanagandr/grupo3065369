@@ -1,7 +1,5 @@
-import { url } from "./config";
-
 export const Post = async (endpoint, data) => {
-    const response = await fetch(`${url}${endpoint}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/${endpoint}`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
