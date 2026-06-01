@@ -25,6 +25,7 @@ export const productos = (data) => {
     
       </div>
     </div>
+
     `
   ).join(''); // Unimos todas las tarjetas en un solo texto eliminando las comas del array
 }

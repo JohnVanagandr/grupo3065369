@@ -1,6 +1,7 @@
 import { rutas } from "./rutas.js";
 
 export const enrrutador = async (app) => {
+
   let hash = window.location.hash;
 
   let temporal = rutas.find((ruta) => {
@@ -9,5 +10,5 @@ export const enrrutador = async (app) => {
 
   app.innerHTML = temporal.vista();
   await temporal.controlador()
-  
+
 }

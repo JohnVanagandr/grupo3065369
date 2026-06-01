@@ -12,49 +12,42 @@ import { obtenerClaseColorCategoria } from "@/helpers/index.js";
 export const productosControlador = async () => {
   // Buscamos el contenedor donde se insertará la lista en el DOM
   const editable = document.querySelector('div > div');
-  
-  // Obtenemos los productos desde la base de datos (servidor)
+
+  // Obtenemos los productos y categorías desde la base de datos
   const dataProductos = await get('productos');
-  
-  // Obtenemos las categorías desde la base de datos (servidor)
   const dataCategorias = await get('categorias');
 
   // Recorremos cada producto para asociarle los datos de su categoría
   const productosEnriquecidos = dataProductos.map(prod => {
-    // Buscamos la categoría del producto en la lista de categorías
     const categoria = dataCategorias.find(c => String(c.id) === String(prod.categoriaId));
-    
+
     return {
-      ...prod, // Copiamos los datos existentes del producto
-      // Le agregamos el nombre de la categoría encontrada (o un mensaje por defecto)
+      ...prod,
       nombreCategoria: categoria ? categoria.nombre : "Sin categoría",
-      // Le agregamos la clase CSS de color que le corresponde
       claseBadge: obtenerClaseColorCategoria(prod.categoriaId)
     };
   });
 
-  // Generamos el HTML usando la plantilla y lo insertamos en el contenedor
+  // Generamos el HTML e insertamos en el contenedor
   editable.innerHTML = productos(productosEnriquecidos);
 
-  // Buscamos todos los contenedores de botones de acción en las tarjetas renderizadas
+  // --- SECCIÓN 1: BOTONES DE CADA PRODUCTO (EDITAR / ELIMINAR) ---
   const contenedores = editable.querySelectorAll('.contenedor-acciones');
-  
 
-  // Recorremos cada contenedor para inyectarle sus botones de Editar y Eliminar
   contenedores.forEach(contenedor => {
-    // Obtenemos el ID del producto guardado en el atributo data-id
     const id = contenedor.getAttribute('data-id');
-
-    
 
     const editarBtn = btnEditar("productos", id);
     const eliminarBtn = btnEliminar(id);
+
     contenedor.appendChild(editarBtn);
     contenedor.appendChild(eliminarBtn);
 
     editarBtn.addEventListener('click', () => {
       sessionStorage.setItem("editId", id);
       window.location.hash = "#/productos/editar";
-      });
+    });
   });
-}
+
+
+};
