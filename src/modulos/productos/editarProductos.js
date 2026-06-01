@@ -36,10 +36,18 @@ export async function inicializarFormularioEdicion(id) {
 
     // Configuración del botón cancelar
     const btnCancelar = document.getElementById('cancelForm');
+    const btnConfirm= document.getElementById("saveForm");
     if (btnCancelar) {
         btnCancelar.addEventListener('click', (e) => {
             e.preventDefault(); // Evita comportamientos por defecto del botón/formulario
             window.location.hash = '#/productos'; // Redirección corregida al hash de la SPA
         });
+    }
+    if(btnConfirm){
+        btnConfirm.addEventListener('click', (e) =>{
+            e.preventDefault();
+            EditManager.clearEditData();
+            window.location.href = '/#/productos'; // O la ruta de tu listado
+        })
     }
 }
