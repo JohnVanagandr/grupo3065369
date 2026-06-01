@@ -7,6 +7,24 @@ import { productos } from "./listarProductos";
 import { btnEliminar } from "@/components/btnEliminar";
 import { btnEditar } from "@/components/btnEditar";
 import { obtenerClaseColorCategoria } from "@/helpers/index.js";
+import { del } from "@/utilidad/solicitudes";
+
+const eliminarProducto = async (ruta) => {
+  const confirmacion = confirm("¿Estás seguro de que deseas eliminar este producto?");
+  if (confirmacion) {
+    try {
+      const resultado = await del(ruta);
+      if (resultado.success) {
+        alert("Producto eliminado exitosamente.");
+        productosControlador(); // Recargar la lista de productos después de eliminar
+      } else {
+        alert("Error al eliminar el producto: " + resultado.message);
+      }
+    } catch (error) {
+      alert("Error de red al eliminar el producto: " + error.message);
+    }
+  }
+}
 
 // Controlador que gestiona la carga y muestra de productos
 export const productosControlador = async () => {
@@ -48,13 +66,42 @@ export const productosControlador = async () => {
     
 
     const editarBtn = btnEditar("productos", id);
-    const eliminarBtn = btnEliminar(id);
+    const eliminarBtn = btnEliminar("productos", id);
     contenedor.appendChild(editarBtn);
     contenedor.appendChild(eliminarBtn);
 
     editarBtn.addEventListener('click', () => {
       sessionStorage.setItem("editId", id);
       window.location.hash = "#/productos/editar";
-      });
+    });
+
+    eliminarBtn.addEventListener('click', async () => {
+      sessionStorage.setItem("deleteId", id);
+      window.location.hash = "#/productos/eliminar";
+    });
+
+    eliminarBtn.addEventListener('click', async (event) => {
+      // Verificamos si el elemento clickeado es un botón de eliminar
+      if (event.target.classList.contains('btn-eliminar')) {
+        const id = event.target.getAttribute('data-id');
+        // Confirmamos con el usuario si realmente desea eliminar el producto
+        const confirmacion = confirm("¿Estás seguro de que deseas eliminar este producto?");
+        if (confirmacion) {
+          try {
+            // Llamamos a la función de eliminación y esperamos su resultado  
+            const resultado = await del(`productos/${id}`);
+            if (resultado.success) {
+              alert("Producto eliminado exitosamente.");
+              // Recargamos la lista de productos para reflejar el cambio
+              productosControlador();
+            } else {
+              alert("Error al eliminar el producto: " + resultado.message);
+            }
+          } catch (error) {
+            alert("Error de red al eliminar el producto: " + error.message);
+          }
+        }
+      }
+    });
   });
 }

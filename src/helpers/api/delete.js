@@ -32,9 +32,23 @@ export const eliminarCategoria = async (id, tarjetaHtml) => {
             console.error("ocurrio un fallo", error);
             alert("error no se logro conectar con el servidor.")
         }
-
-
     }
+}
 
+export const eliminarProducto = async (id, tarjetaHtml) => {
+    //pregunta el usuario si de verdad quiere borrar
+    const confirmar = confirm(`esta seguro que quieres elimnar el producto #${id}?`)
 
+    if(confirmar){
+        try{
+            //llamamaos a la funcion remover de arriba para borrarlos
+            await remove(`productos/${id}`);
+            //si se borra corractamente del servidor, se borra de la tarjetahtml
+            tarjetaHtml.remove();
+
+        }catch(error){
+            console.error("ocurrio un fallo", error);
+            alert("error no se logro conectar con el servidor.")
+        }
+    }
 }
