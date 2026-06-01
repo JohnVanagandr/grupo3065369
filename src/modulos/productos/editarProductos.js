@@ -1,5 +1,5 @@
 import { get } from '../../helpers/api/index.js' 
-
+import { EditManager } from '../../helpers/editManager.js';
 export async function inicializarFormularioEdicion(id) {
 
     const data = await await get(`productos/${id}`);
@@ -23,11 +23,19 @@ export async function inicializarFormularioEdicion(id) {
 
     // Configuración del botón cancelar
     const btnCancelar = document.getElementById('cancelForm');
+    const btnConfirm= document.getElementById("saveForm");
     if (btnCancelar) {
         btnCancelar.addEventListener('click', (e) => {
             e.preventDefault(); // Evita comportamientos por defecto del botón/formulario
             EditManager.clearEditData();
             window.location.href = '/productos.html'; // O la ruta de tu listado
         });
+    }
+    if(btnConfirm){
+        btnConfirm.addEventListener('click', (e) =>{
+            e.preventDefault();
+            EditManager.clearEditData();
+            window.location.href = '/#/productos'; // O la ruta de tu listado
+        })
     }
 }
