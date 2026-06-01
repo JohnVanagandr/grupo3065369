@@ -39,10 +39,14 @@ export const productosControlador = async () => {
   // Buscamos todos los contenedores de botones de acción en las tarjetas renderizadas
   const contenedores = editable.querySelectorAll('.contenedor-acciones');
   
+
   // Recorremos cada contenedor para inyectarle sus botones de Editar y Eliminar
   contenedores.forEach(contenedor => {
     // Obtenemos el ID del producto guardado en el atributo data-id
     const id = contenedor.getAttribute('data-id');
+
+    
+
     const editarBtn = btnEditar("productos", id);
     const eliminarBtn = btnEliminar(id);
     contenedor.appendChild(editarBtn);

@@ -1,12 +1,16 @@
-import { categoriasControlador, 
-  vistaCategorias } 
-  from "@/modulos/categorias/index.js";
+// ANTES: La importación de productos usaba ruta relativa "../modulos/productos"
+// CAMBIO: Se cambió a usar el alias "@/modulos/productos"
+// POR QUÉ: Para mantener consistencia con la importación de categorías que usa el alias @,
+// y aprovechar la configuración del alias en vite.config.js para una mejor estructura
+import { categoriasControlador, vistaCategorias, vistaFormularioCategorias, formularioControladorCategoria  } from "@/modulos/categorias/index.js";
+
 import {
   vistaProductos,
   productosControlador,
-  formularioControlador
-} from "../modulos/productos";
-import {vistaFormulario} from "@/modulos/categorias/index.js";
+  formularioControladorProductos,
+  vistaFormularioProductos
+} from "@/modulos/productos";
+
 
 // Estas serian las rutas
 export const rutas = [
@@ -17,8 +21,8 @@ export const rutas = [
   },
   {
     'ruta': '#/productos/editar',
-    vista: vistaFormulario,
-    controlador: formularioControlador
+    vista: vistaFormularioProductos,
+    controlador: formularioControladorProductos
   },
   
   // Esta es la ruta de categorias
@@ -30,7 +34,7 @@ export const rutas = [
   // Ruta para la edicion de la categoria
   {
     'ruta': '#/categorias/editar',
-    vista: vistaFormulario,
-    controlador: formularioControlador
+    vista: vistaFormularioCategorias,
+    controlador: formularioControladorCategoria
   } 
 ]

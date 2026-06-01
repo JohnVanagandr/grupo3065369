@@ -2,7 +2,7 @@ import { url } from "./config";
 
 export const Put = async (endpoint, id, body) => {
     const response = await fetch(`${url}${endpoint}/${id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         body: JSON.stringify(body),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',

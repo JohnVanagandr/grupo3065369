@@ -1,5 +1,15 @@
-export const formularioControlador = () => {
+import { actualizarproducto } from "./metodoActualizarProductos.js";
+import { inicializarFormularioEdicion } from "./editarProductos.js"
+
+export const formularioControladorProductos = async() => {
+
+  
   const id = sessionStorage.getItem("editId");
+  const nombre = sessionStorage.getItem("")
+  
+  await inicializarFormularioEdicion(id);
+  console.log(id);
+  
 
   const inputId = document.getElementById("id");
   const btnCancel = document.getElementById("cancelForm");
@@ -15,6 +25,7 @@ export const formularioControlador = () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    actualizarproducto();
     console.log("Guardando producto...");
   });
 };
