@@ -1,8 +1,10 @@
-import { get } from '../../helpers/api/index.js' 
+import { get } from '../../helpers/api/index.js';
+import { selectCategorias } from '../../components/selectCategorias.js';
 
 export async function inicializarFormularioEdicion(id) {
 
-    const data = await await get(`productos/${id}`);
+    const data = await get(`productos/${id}`);
+    const categorias = await get('categorias');
 
     console.log(data);
     
@@ -14,11 +16,22 @@ export async function inicializarFormularioEdicion(id) {
         const descInput = document.getElementById('desc');
         const urlInput = document.getElementById('url');
         const tituloForm = document.querySelector('.form__titulo');
+        const contenedorCategoria = document.getElementById('contenedorCategoria');
 
         if (nombreInput) nombreInput.value = data.nombre;
         if (descInput) descInput.value = data.descripcion; // Coincide con tu objeto
         if (urlInput) urlInput.value = data.imagen;
         if (tituloForm) tituloForm.innerText = "EDITAR PRODUCTO";
+        
+        if (contenedorCategoria) {
+            // Limpiamos contenido previo por si acaso
+            const label = contenedorCategoria.querySelector('label');
+            contenedorCategoria.innerHTML = '';
+            if (label) contenedorCategoria.appendChild(label);
+            
+            // Inyectamos el select con la categoría actual seleccionada
+            contenedorCategoria.appendChild(selectCategorias(categorias, data.categoriaId));
+        }
     }
 
     // Configuración del botón cancelar
@@ -26,8 +39,7 @@ export async function inicializarFormularioEdicion(id) {
     if (btnCancelar) {
         btnCancelar.addEventListener('click', (e) => {
             e.preventDefault(); // Evita comportamientos por defecto del botón/formulario
-            EditManager.clearEditData();
-            window.location.href = '/productos.html'; // O la ruta de tu listado
+            window.location.hash = '#/productos'; // Redirección corregida al hash de la SPA
         });
     }
 }
