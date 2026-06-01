@@ -1,4 +1,4 @@
-export const formularioControlador = () => {
+export const formularioControladorCategoria = () => {
   const id = sessionStorage.getItem("editId");
 
   const inputId = document.getElementById("id");

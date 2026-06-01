@@ -1,4 +1,6 @@
-export const formularioControlador = () => {
+import { actualizarproducto } from "..";
+
+export const formularioControladorProductos = () => {
   const id = sessionStorage.getItem("editId");
 
   const inputId = document.getElementById("id");
