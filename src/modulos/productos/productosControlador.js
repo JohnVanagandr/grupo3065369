@@ -7,7 +7,7 @@ import { productos } from "./listarProductos";
 import { btnEliminar } from "@/components/btnEliminar";
 import { btnEditar } from "@/components/btnEditar";
 import { obtenerClaseColorCategoria } from "@/helpers/index.js";
-import { del } from "@/utilidad/solicitudes";
+import { del } from "@/utilidad/solicitudes.js";
 
 const eliminarProducto = async (id) => {
     return await del(`productos/${id}`);
