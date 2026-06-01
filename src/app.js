@@ -7,8 +7,11 @@ const nav = document.querySelector("nav");
 const editable = document.querySelector("#editable");
 
 const arrancar = () => {
+  // ANTES: Había dos llamadas a enrrutador(), una con el parámetro 'editable' y otra sin parámetro
+  // CAMBIO: Se eliminó la segunda llamada enrrutador() sin parámetro
+  // POR QUÉ: La segunda llamada causaba que 'app' fuera undefined en router.js:10 al intentar setear innerHTML,
+  // generando el error "Cannot set properties of undefined (setting 'innerHTML')"
   enrrutador(editable)
-  enrrutador()
 }
 
 window.addEventListener('hashchange', arrancar);
@@ -16,29 +19,3 @@ window.addEventListener('hashchange', arrancar);
 document.addEventListener('DOMContentLoaded', arrancar)
 
 
-// async function cargarInventario() {
-
-//   try {
-//     const data = await get('productos');
-
-//     if (!data) throw new Error("No se recibieron datos");
-
-//     const productos = Array.isArray(data) ? data : (data.productos || []);
-
-//     const htmlProductos = productos.map(producto => `
-//             <article class="product-card">
-//                 <img src="${producto.imagen}" alt="${producto.nombre}">
-//                 <h3>${producto.nombre}</h3>
-//                 <p>${producto.descripcion}</p>
-//             </article>
-//         `).join('');
-
-//     cardContainer.innerHTML = htmlProductos || "<p>No hay productos disponibles.</p>";
-
-//   } catch (error) {
-//     console.error("Error al obtener los datos:", error);
-//     cardContainer.innerHTML = `<p>Error al cargar el inventario, revisa que el servidor este encendido.</p>`;
-//   }
-// }
-
-// document.addEventListener('DOMContentLoaded', cargarInventario);

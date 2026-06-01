@@ -92,7 +92,7 @@
 }
 
 .categoria-card__btn {
-  padding: 10px 22px;
+  padding: 10px 30px;
   border: none;
   border-radius: 10px;
   font-family: 'Barlow', sans-serif;
@@ -114,7 +114,7 @@
 }
 
 .categoria-card__btn--eliminar {
-  background-color: #c5c8db;
+  background-color: #dbc5c5;
   color: #2c3250;
 }
 
