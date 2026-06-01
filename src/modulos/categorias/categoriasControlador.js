@@ -2,6 +2,11 @@ import { get } from "@/utilidad/solicitudes";
 import { categorias } from "./listarCategorias";
 import { btnEliminar } from "@/components/btnEliminar";
 import { btnEditar } from "@/components/btnEditar";
+import { del } from "@/utilidad/solicitudes";
+
+const eliminarCategoria = async (id) => {
+  return await del(`categorias/${id}`);
+};
 
 export const categoriasControlador = async () => {
   const editable = document.querySelector('div > div');
@@ -16,13 +21,34 @@ export const categoriasControlador = async () => {
     const id = contenedor.getAttribute('data-id');
     const editarBtn = btnEditar("categorias", id);
     const eliminarBtn = btnEliminar(id);
-    contenedor.appendChild(editarBtn);
+    contenedor.appendChild(btnEditar(editarBtn));
     contenedor.appendChild(eliminarBtn);
 
     editarBtn.addEventListener('click', () => {
       sessionStorage.setItem("editId", id);
       window.location.hash = "#/categorias/editar";
+      
     });
+
+    eliminarBtn.addEventListener('click', async () => {
+    const confirmar = confirm(`¿Deseas eliminar la categoría "${id}"?`);
+
+    if (!confirmar) return;
+
+    try {
+
+    await eliminarCategoria(id);
+
+    contenedor.closest('.categoria-card').remove();
+
+  } catch (error) {
+
+    console.error(error);
+    alert('No se pudo eliminar la categoría');
+
+  }
+
+});
 
 
   });
