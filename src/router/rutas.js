@@ -3,11 +3,10 @@ import { categoriasControlador,
   from "@/modulos/categorias/index.js";
 import {
   vistaProductos,
-  productosControlador
+  productosControlador,
+  formularioControlador
 } from "../modulos/productos";
 import {vistaFormulario} from "@/modulos/categorias/index.js";
-import {vistaFormulario} from "@/modulos/productos/index.js";
-
 
 // Estas serian las rutas
 export const rutas = [
