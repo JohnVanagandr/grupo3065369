@@ -43,9 +43,14 @@ export const productosControlador = async () => {
   contenedores.forEach(contenedor => {
     // Obtenemos el ID del producto guardado en el atributo data-id
     const id = contenedor.getAttribute('data-id');
-    // Creamos y agregamos el botón de Editar
-    contenedor.appendChild(btnEditar(id));
-    // Creamos y agregamos el botón de Eliminar
-    contenedor.appendChild(btnEliminar(id));
+    const editarBtn = btnEditar("productos", id);
+    const eliminarBtn = btnEliminar(id);
+    contenedor.appendChild(editarBtn);
+    contenedor.appendChild(eliminarBtn);
+
+    editarBtn.addEventListener('click', () => {
+      sessionStorage.setItem("editId", id);
+      window.location.hash = "#/productos/editar";
+      });
   });
 }
