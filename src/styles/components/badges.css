@@ -1,0 +1,46 @@
+/* =========================
+   COMPONENT: CATEGORY BADGES
+========================= */
+
+.categoria-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+/* Badge colors for specific category IDs */
+
+/* ID 1: inmobiliario */
+.categoria-badge--inmobiliario {
+  background-color: var(--color-orange-50);
+  color: var(--color-orange-700);
+  border: 1px solid var(--color-orange-100);
+}
+
+/* ID 2: tecnologia */
+.categoria-badge--tecnologia {
+  background-color: var(--color-purple-50);
+  color: var(--color-purple-600);
+  border: 1px solid var(--color-purple-100);
+}
+
+/* ID 3: equipos_refrigeracion */
+.categoria-badge--refrigeracion {
+  background-color: var(--color-green-50);
+  color: var(--color-green-700);
+  border: 1px solid var(--color-green-100);
+}
+
+/* Default / Uncategorized */
+.categoria-badge--default {
+  background-color: var(--color-white-200);
+  color: var(--color-white-800);
+  border: 1px solid var(--color-white-400);
+}
