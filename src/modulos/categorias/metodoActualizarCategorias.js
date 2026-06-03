@@ -17,7 +17,8 @@ export const actualizarCategoria = async () => {
         if (resultado) {
             // en caso de exito se muestra en consola
             console.log('registro actualizado con exito en el inventario');
-            alert('producto actualizado correctamente');
+            alert('categoria actualizada correctamente');
+            window.location.href = "/#/categorias";
         }
     } catch (error) {
         // se captura el error en caso de que falle la peticion

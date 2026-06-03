@@ -1,5 +1,5 @@
 export const Put = async (endpoint, id, body) => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/${endpoint}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/${endpoint}/${id}`, {
         method: 'PUT',
         body: JSON.stringify(body),
         headers: {

@@ -20,6 +20,7 @@ export const actualizarproducto = async () => {
             // en caso de exito se muestra en consola
             console.log('registro actualizado con exito en el inventario');
             alert('producto actualizado correctamente');
+            window.location.href = "/#/productos";
         }
     } catch (error) {
         // se captura el error en caso de que falle la peticion

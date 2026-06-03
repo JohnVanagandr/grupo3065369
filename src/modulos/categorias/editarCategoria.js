@@ -25,14 +25,7 @@ export async function inicializarFormularioEdicion(id) {
         btnCancelar.addEventListener('click', (e) => {
             e.preventDefault(); // Evita comportamientos por defecto del botón/formulario
             EditManager.clearEditData();
-            window.location.href = '/categorias.html'; // O la ruta de tu listado
+            window.location.href = '/#/categorias';
         });
-    }
-    if(btnConfirm){
-        btnConfirm.addEventListener('click', (e) =>{
-                e.preventDefault();
-                EditManager.clearEditData();
-                window.location.href = '/#/categorias'; // O la ruta de tu listado
-            })
     }
 }
